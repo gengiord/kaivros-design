@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{margin:0;padding:28px;background:var(--cream);font-family:var(--font-body);color:var(--fg1);display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cell{display:flex;flex-direction:column;align-items:center;gap:10px}
+.card{width:140px;height:70px;background:#fff;border-radius:var(--radius-lg)}
+.lbl{font-family:var(--font-heading);font-weight:600;font-size:11px}
+.tok{font-family:var(--font-mono);font-size:10px;color:var(--fg2)}
+</style></head><body>
+<div class="cell"><div class="card" style="box-shadow:var(--shadow-xs)"></div><div class="lbl">shadow-xs</div><div class="tok">hairline</div></div>
+<div class="cell"><div class="card" style="box-shadow:var(--shadow-card)"></div><div class="lbl">shadow-card</div><div class="tok">default elevation</div></div>
+<div class="cell"><div class="card" style="box-shadow:var(--shadow-glass)"></div><div class="lbl">shadow-glass</div><div class="tok">floating panel</div></div>
+<div class="cell"><div class="card" style="box-shadow:var(--shadow-md)"></div><div class="lbl">shadow-md</div><div class="tok">neutral</div></div>
+<div class="cell"><div class="card" style="box-shadow:var(--shadow-lg)"></div><div class="lbl">shadow-lg</div><div class="tok">emphasis</div></div>
+<div class="cell"><div class="card" style="box-shadow:var(--shadow-float)"></div><div class="lbl">shadow-float</div><div class="tok">hover / lift</div></div>
+</body></html>

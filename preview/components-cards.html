@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{margin:0;padding:24px;background:var(--cream);font-family:var(--font-body);color:var(--fg1);display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border-radius:var(--radius-lg);padding:18px;border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.card h4{font-family:var(--font-heading);font-weight:600;font-size:15px;margin:0 0 6px 0}
+.card p{margin:0;color:var(--fg2);font-size:13px;line-height:1.5}
+.card.elev{box-shadow:var(--shadow-float);transform:translateY(-2px)}
+.card.cream{background:var(--cream);border-color:var(--border)}
+.card.glass{background:rgba(255,255,255,.7);border-color:var(--border-glass);box-shadow:var(--shadow-glass)}
+.tag{font-family:var(--font-mono);font-size:10px;color:var(--fg3);margin-bottom:8px;display:block}
+</style></head><body>
+<div class="card"><span class="tag">elevation · card</span><h4>Quiet default</h4><p>Standard surface, soft shadow, sits on cream.</p></div>
+<div class="card elev"><span class="tag">elevation · float</span><h4>Lifted</h4><p>Hover state — translateY(-2px), shadow grows.</p></div>
+<div class="card glass"><span class="tag">border · glass</span><h4>Glass panel</h4><p>Translucent white over warm backgrounds.</p></div>
+</body></html>

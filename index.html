@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaivros Design System</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      margin: 0;
+      padding: 0;
+    }
+    .hero {
+      background: var(--lilla-md);
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 3rem;
+      margin: 0 0 1rem 0;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section {
+      margin-bottom: 4rem;
+    }
+    .section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--black);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(31,31,31,0.10);
+      box-shadow: 0 4px 20px rgba(31,31,31,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(31,31,31,0.15);
+    }
+    .card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.125rem;
+      margin: 0 0 0.5rem 0;
+    }
+    .card p {
+      font-size: 0.875rem;
+      color: rgba(31,31,31,0.6);
+      margin: 0 0 1rem 0;
+    }
+    .card a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: var(--lilla-md);
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: background 0.2s ease;
+    }
+    .card a:hover {
+      background: var(--lilla-dk);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--lilla-lt);
+      color: var(--lilla-dk);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Kaivros Design System</h1>
+    <p>Tokens, components, and patterns for Kaivros applications</p>
+  </div>
+  
+  <div class="container">
+    <div class="section">
+      <h2>Colors</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">Primary</span>
+          <h3>Primary Colors</h3>
+          <p>Lilla scale - the signature purple palette</p>
+          <a href="preview/colors-primary.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Foundation</span>
+          <h3>Neutrals</h3>
+          <p>Cream, black, and white foundation</p>
+          <a href="preview/colors-neutrals.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Accent</span>
+          <h3>Accent Colors</h3>
+          <p>Coral and warm accent palette</p>
+          <a href="preview/colors-accent.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Supporting</span>
+          <h3>Supporting Colors</h3>
+          <p>Blush, daffodil, meadow, sky, mint</p>
+          <a href="preview/colors-supporting.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Semantic</span>
+          <h3>Semantic Colors</h3>
+          <p>Status and utility color system</p>
+          <a href="preview/colors-semantic.html">View →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Typography</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">Scale</span>
+          <h3>Type Scale</h3>
+          <p>Font size hierarchy</p>
+          <a href="preview/type-scale.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Families</span>
+          <h3>Type Families</h3>
+          <p>Bricolage, Outfit, Noto Sans</p>
+          <a href="preview/type-families.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Hierarchy</span>
+          <h3>Text Hierarchy</h3>
+          <p>Heading and body hierarchy</p>
+          <a href="preview/text-hierarchy.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Logo</span>
+          <h3>Wordmark</h3>
+          <p>Kaivros logo typography</p>
+          <a href="preview/type-wordmark.html">View →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Components</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">UI</span>
+          <h3>Buttons</h3>
+          <p>Primary, secondary, ghost buttons</p>
+          <a href="preview/components-buttons.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">UI</span>
+          <h3>Cards</h3>
+          <p>Card variants and states</p>
+          <a href="preview/components-cards.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">UI</span>
+          <h3>Inputs</h3>
+          <p>Form inputs and fields</p>
+          <a href="preview/components-inputs.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">UI</span>
+          <h3>Badges</h3>
+          <p>Status and category badges</p>
+          <a href="preview/components-badges.html">View →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Logo</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">Brand</span>
+          <h3>Primary Logo</h3>
+          <p>Main Kaivros wordmark</p>
+          <a href="preview/logo-primary.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Brand</span>
+          <h3>Logo Variants</h3>
+          <p>Logo for different backgrounds</p>
+          <a href="preview/logo-variants.html">View →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Design Tokens</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">Spacing</span>
+          <h3>Spacing Scale</h3>
+          <p>4px base grid system</p>
+          <a href="preview/spacing-scale.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Radius</span>
+          <h3>Corner Radii</h3>
+          <p>Border radius tokens</p>
+          <a href="preview/radii.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">Shadow</span>
+          <h3>Shadows</h3>
+          <p>Elevation and shadow system</p>
+          <a href="preview/shadows.html">View →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>UI Kits</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">React</span>
+          <h3>Brand Site</h3>
+          <p>Brand guidelines site components</p>
+          <a href="ui_kits/brand-site/index.html">View →</a>
+        </div>
+        <div class="card">
+          <span class="badge">React</span>
+          <h3>Product App</h3>
+          <p>Product application UI kit</p>
+          <a href="ui_kits/product-app/index.html">View →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

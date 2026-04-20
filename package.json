@@ -1,0 +1,21 @@
+{
+  "name": "kaivros-design",
+  "version": "1.0.0",
+  "description": "Kaivros Design System - Brand guidelines, tokens, assets, and UI kit",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gengiord/kaivros-design.git"
+  },
+  "keywords": [
+    "design-system",
+    "kaivros",
+    "brand",
+    "ui-kit"
+  ],
+  "author": "Kaivros",
+  "license": "MIT"
+}

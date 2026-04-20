@@ -1,0 +1,265 @@
+/* ==========================================================================
+   Kaivros Design System — Colors & Type
+   Base tokens + semantic tokens for Kaivros products.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('fonts/BricolageGrotesque-VariableFont_opsz_wdth_wght.ttf') format('truetype-variations');
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('fonts/Outfit-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/NotoSans-VariableFont_wdth_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/NotoSans-Italic-VariableFont_wdth_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Lilla (Primary Purple Scale) ---------- */
+  --lilla-lt: #DDD1F2;
+  --lilla:    #C5AEE8;
+  --lilla-md: #A98FD8;
+  --lilla-dk: #8B6EC4;
+
+  /* ---------- Violet (Deep Purples) ---------- */
+  --violet-lt: #6B4F8E;
+  --violet:    #493364;
+  --violet-dk: #2E1F40;
+
+  /* ---------- Orange (Accent) ---------- */
+  --orange-lt: #FFB38A;
+  --orange:    #FE794E;
+  --orange-md: #E85C3E;
+  --orange-dk: #D65A3E;
+
+  /* ---------- Supporting Accents ---------- */
+  --coral:    #FE794E;
+  --blush:    #FE9DC0;
+  --daffodil: #FCCD86;
+  --meadow:   #A8BF8A;
+  --sky:      #89B7C2;
+  --mint:     #98D8C8;
+
+  /* ---------- Neutrals ---------- */
+  --cream: #F9F6EF;
+  --black: #1F1F1F;
+  --white: #FFFFFF;
+
+  /* ---------- Semantic Background ---------- */
+  --bg-primary:   var(--cream);
+  --bg-secondary: var(--white);
+  --bg-dark:      var(--black);
+  --bg-accent:    var(--lilla-lt);
+
+  /* ---------- Semantic Foreground / Text ---------- */
+  --fg1: var(--black);                         /* primary text */
+  --fg2: rgba(31, 31, 31, 0.60);               /* secondary text */
+  --fg3: rgba(31, 31, 31, 0.40);               /* muted text */
+  --fg-inverse: var(--white);
+  --fg-brand:   var(--lilla-md);
+  --fg-violet:  var(--violet);
+
+  /* ---------- Interactive ---------- */
+  --interactive:       var(--lilla-md);
+  --interactive-hover: var(--lilla-dk);
+  --interactive-secondary: var(--violet);
+  --interactive-accent: var(--orange);
+
+  /* ---------- Status ---------- */
+  --success: var(--meadow);
+  --warning: var(--daffodil);
+  --error:   var(--orange-md);
+  --info:    var(--sky);
+
+  /* ---------- Borders ---------- */
+  --border:        rgba(31, 31, 31, 0.10);
+  --border-strong: rgba(31, 31, 31, 0.20);
+  --border-glass:  rgba(255, 255, 255, 0.15);
+
+  /* ---------- Type Families ---------- */
+  --font-display: 'Bricolage Grotesque', sans-serif; /* Logo, hero titles */
+  --font-heading: 'Outfit', sans-serif;              /* Headings, UI */
+  --font-body:    'Noto Sans', sans-serif;           /* Body text */
+  --font-mono:    'SF Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* ---------- Type Scale ---------- */
+  --text-2xs: 0.625rem;  /* 10 */
+  --text-xs:  0.75rem;   /* 12 */
+  --text-sm:  0.875rem;  /* 14 */
+  --text-base:1rem;      /* 16 */
+  --text-lg:  1.125rem;  /* 18 */
+  --text-xl:  1.25rem;   /* 20 */
+  --text-2xl: 1.5rem;    /* 24 */
+  --text-3xl: 1.875rem;  /* 30 */
+  --text-4xl: 2.25rem;   /* 36 */
+  --text-5xl: 3rem;      /* 48 */
+  --text-6xl: 3.75rem;   /* 60 */
+  --text-7xl: 4.5rem;    /* 72 */
+  --text-8xl: 6rem;      /* 96 */
+
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+
+  --tracking-tighter: -0.05em;
+  --tracking-tight:   -0.025em;
+  --tracking-wide:     0.025em;
+  --tracking-wider:    0.05em;
+  --tracking-widest:   0.1em;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-1: 0.25rem;   /* 4  */
+  --space-2: 0.5rem;    /* 8  */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.25rem;   /* 20 */
+  --space-6: 1.5rem;    /* 24 */
+  --space-8: 2rem;      /* 32 */
+  --space-10: 2.5rem;   /* 40 */
+  --space-12: 3rem;     /* 48 */
+  --space-16: 4rem;     /* 64 */
+  --space-20: 5rem;     /* 80 */
+  --space-24: 6rem;     /* 96 */
+
+  /* ---------- Radii ---------- */
+  --radius-xs:  0.25rem;
+  --radius-sm:  0.375rem;
+  --radius:     0.5rem;
+  --radius-md:  0.75rem;
+  --radius-lg:  1rem;
+  --radius-xl:  1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow:    0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 6px 8px -1px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 31, 31, 0.08);
+  --shadow-card:  0 4px 20px 0 rgba(31, 31, 31, 0.06);
+  --shadow-float: 0 20px 40px -10px rgba(31, 31, 31, 0.15);
+}
+
+/* ==========================================================================
+   Semantic Type Presets
+   Apply these classes (or reuse the vars) in components/slides.
+   ========================================================================== */
+
+.k-display-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-8xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.k-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-6xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.k-h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.k-h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.k-h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+}
+.k-h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+}
+.k-h5 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+.k-body-lg {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+.k-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+.k-body-sm {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+.k-label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+.k-caption {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+}
+.k-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Wordmark recipe (K in Bricolage + rest in Outfit) */
+.k-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+.k-wordmark .k {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.k-wordmark .rest {
+  font-family: var(--font-heading);
+  font-weight: 500;
+}

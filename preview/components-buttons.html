@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{margin:0;padding:24px;background:#fff;font-family:var(--font-body);color:var(--fg1);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--font-heading);font-weight:600;border-radius:var(--radius-md);padding:.625rem 1rem;font-size:14px;height:2.5rem;border:none;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+.primary{background:var(--lilla-md);color:#fff;box-shadow:var(--shadow-sm)}
+.secondary{background:var(--cream);color:var(--fg1);border:1px solid var(--border)}
+.outline{background:transparent;color:var(--lilla-md);border:1.5px solid var(--lilla-md)}
+.ghost{background:transparent;color:var(--fg1)}
+.accent{background:var(--orange);color:#fff}
+.lbl{font-family:var(--font-mono);font-size:10px;color:var(--fg3);width:70px}
+</style></head><body>
+<div class="row"><div class="lbl">variants</div>
+  <button class="btn primary">Primary</button>
+  <button class="btn secondary">Secondary</button>
+  <button class="btn outline">Outline</button>
+  <button class="btn ghost">Ghost</button>
+  <button class="btn accent">Accent</button>
+</div>
+<div class="row"><div class="lbl">sizes</div>
+  <button class="btn primary" style="padding:.375rem .625rem;height:1.75rem;font-size:12px">xs</button>
+  <button class="btn primary" style="padding:.5rem .875rem;height:2.25rem;font-size:14px">sm</button>
+  <button class="btn primary">md</button>
+  <button class="btn primary" style="padding:.75rem 1.25rem;height:2.75rem;font-size:16px">lg</button>
+  <button class="btn primary" style="padding:1rem 1.5rem;height:3.25rem;font-size:18px">xl</button>
+</div>
+<div class="row"><div class="lbl">states</div>
+  <button class="btn primary" style="opacity:.5;cursor:not-allowed">Disabled</button>
+  <button class="btn primary"><span style="display:inline-block">⟳</span> Loading</button>
+</div>
+</body></html>

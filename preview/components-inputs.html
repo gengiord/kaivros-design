@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{margin:0;padding:24px;background:#fff;font-family:var(--font-body);color:var(--fg1)}
+.grp{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;max-width:380px}
+label{font-family:var(--font-heading);font-size:12px;font-weight:600;letter-spacing:.02em}
+input{font-family:var(--font-body);color:var(--fg1);background:#fff;border:1.5px solid var(--border-strong);border-radius:var(--radius-md);height:2.75rem;padding:8px 16px;font-size:14px;outline:none}
+input:focus{border-color:var(--lilla-md);box-shadow:0 0 0 3px rgba(169,143,216,.2)}
+.helper{font-size:12px;color:var(--fg3)}
+.err input{border-color:var(--orange-md)}
+.err .helper{color:var(--orange-md)}
+.dis input{opacity:.6;background:#fff;cursor:not-allowed}
+</style></head><body>
+<div class="grp"><label>Email</label><input value="you@kaivros.com" placeholder="you@example.com"><div class="helper">We'll never share your email.</div></div>
+<div class="grp err"><label>Password</label><input type="password" value="•••••"><div class="helper">Password must be at least 8 characters</div></div>
+<div class="grp dis"><label>Disabled</label><input placeholder="Can't type here" disabled></div>
+</body></html>

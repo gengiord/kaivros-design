@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{margin:0;padding:16px;background:#fff;font-family:var(--font-body)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.tile{aspect-ratio:2/1;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;padding:8px}
+.wm{display:inline-flex;align-items:baseline;line-height:1;letter-spacing:.05em}
+.wm .k{font-family:var(--font-display);font-weight:700;font-size:34px}
+.wm .r{font-family:var(--font-heading);font-weight:500;font-size:32px}
+.cap{font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--fg3);text-align:center;margin-top:6px;text-transform:uppercase}
+.cell{display:flex;flex-direction:column}
+</style></head><body>
+<div class="grid">
+  <div class="cell"><div class="tile" style="background:var(--cream);border:1px solid var(--border)">
+    <span class="wm"><span class="k" style="color:var(--lilla-md)">K</span><span class="r" style="color:var(--black)">aivros</span></span>
+  </div><div class="cap">on cream</div></div>
+
+  <div class="cell"><div class="tile" style="background:var(--lilla-lt)">
+    <span class="wm"><span class="k" style="color:var(--violet)">K</span><span class="r" style="color:var(--black)">aivros</span></span>
+  </div><div class="cap">on lilla-lt</div></div>
+
+  <div class="cell"><div class="tile" style="background:var(--lilla-md)">
+    <span class="wm"><span class="k" style="color:var(--violet)">K</span><span class="r" style="color:var(--violet)">aivros</span></span>
+  </div><div class="cap">on lilla-md</div></div>
+
+  <div class="cell"><div class="tile" style="background:var(--black)">
+    <span class="wm"><span class="k" style="color:var(--lilla-md)">K</span><span class="r" style="color:#fff">aivros</span></span>
+  </div><div class="cap">on black</div></div>
+
+  <div class="cell"><div class="tile" style="background:var(--coral)">
+    <span class="wm"><span class="k" style="color:#fff">K</span><span class="r" style="color:#fff">aivros</span></span>
+  </div><div class="cap">on orange bg</div></div>
+
+  <div class="cell"><div class="tile" style="background:#FFD6B8">
+    <span class="wm"><span class="k" style="color:#E85C3E">K</span><span class="r" style="color:#E85C3E">aivros</span></span>
+  </div><div class="cap">on orange-lt</div></div>
+
+  <div class="cell"><div class="tile" style="background:var(--violet)">
+    <span class="wm"><span class="k" style="color:var(--lilla-md)">K</span><span class="r" style="color:#fff">aivros</span></span>
+  </div><div class="cap">on violet</div></div>
+
+  <div class="cell"><div class="tile" style="background:#fff;border:1px solid var(--border)">
+    <span class="wm"><span class="k" style="color:var(--lilla-md)">K</span><span class="r" style="color:var(--black)">aivros</span></span>
+  </div><div class="cap">on white</div></div>
+</div>
+</body></html>

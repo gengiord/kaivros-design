@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{margin:0;padding:24px;background:#fff;font-family:var(--font-body);color:var(--fg1);display:flex;flex-direction:column;gap:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.lbl{font-family:var(--font-mono);font-size:10px;color:var(--fg3);width:60px}
+.b{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-heading);font-weight:600;border-radius:9999px;padding:4px 10px;font-size:12px;line-height:1;height:1.5rem}
+.solid-primary{background:var(--lilla-md);color:#fff}
+.solid-secondary{background:var(--violet);color:#fff}
+.solid-success{background:var(--meadow);color:#fff}
+.solid-accent{background:var(--orange);color:#fff}
+.subtle-primary{background:var(--lilla-lt);color:var(--violet-lt)}
+.subtle-success{background:#E8F0E0;color:#5A7A4A}
+.subtle-warning{background:#FFF5E0;color:#B8956A}
+.subtle-error{background:#FFE8E0;color:var(--orange-md)}
+.subtle-info{background:#E0F0F5;color:#4A7A8A}
+.out-primary{border:1px solid var(--lilla-md);color:var(--lilla-md)}
+.out-accent{border:1px solid var(--orange);color:var(--orange)}
+</style></head><body>
+<div class="row"><div class="lbl">solid</div>
+  <span class="b solid-primary">Primary</span>
+  <span class="b solid-secondary">Secondary</span>
+  <span class="b solid-success">Active</span>
+  <span class="b solid-accent">New</span>
+</div>
+<div class="row"><div class="lbl">subtle</div>
+  <span class="b subtle-primary">In progress</span>
+  <span class="b subtle-success">Completed</span>
+  <span class="b subtle-warning">Draft</span>
+  <span class="b subtle-error">Failed</span>
+  <span class="b subtle-info">Notice</span>
+</div>
+<div class="row"><div class="lbl">outline</div>
+  <span class="b out-primary">Tag</span>
+  <span class="b out-accent">Tag</span>
+</div>
+</body></html>
