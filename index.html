@@ -8,6 +8,70 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="colors_and_type.css" />
   <link rel="stylesheet" href="guidelines.css" />
+  <style>
+    /* ── Estensioni inline per le sezioni aggiunte ── */
+    .dark-demo {
+      background: #1E1628;
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      display: flex; flex-direction: column; gap: var(--space-4);
+    }
+    .dark-demo .card-title { color: #EDE8F5; }
+    .dark-demo .card-desc  { color: rgba(237,232,245,0.55); }
+
+    .motion-row {
+      display: flex; align-items: center; gap: var(--space-6);
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .motion-row:last-child { border-bottom: none; }
+    .motion-token { font-family: var(--font-mono, monospace); font-size: var(--text-sm); color: var(--lilla-dk); min-width: 180px; }
+    .motion-value { font-size: var(--text-sm); color: var(--fg2); min-width: 220px; }
+    .motion-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--lilla-md);
+      cursor: pointer;
+    }
+    .motion-dot:hover { animation: none; transform: none; }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: var(--space-3);
+    }
+    .icon-tile {
+      display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+      padding: var(--space-4) var(--space-2);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      font-size: 11px; color: var(--fg2);
+      text-align: center; line-height: 1.3;
+    }
+    .icon-tile svg { color: var(--lilla-dk); }
+
+    .state-row {
+      display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: flex-end;
+    }
+    .state-item { display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm); color: var(--fg2); }
+
+    .do-dont-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);
+    }
+    .do-block, .dont-block {
+      border-radius: var(--radius-md); padding: var(--space-6);
+    }
+    .do-block { background: rgba(168,191,138,0.1); border: 1px solid rgba(168,191,138,0.3); }
+    .dont-block { background: rgba(254,121,78,0.07); border: 1px solid rgba(254,121,78,0.25); }
+    .do-block .label-tag { color: #5a8a3a; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: var(--space-3); display: block; }
+    .dont-block .label-tag { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: var(--space-3); display: block; }
+    .do-dont-grid p { font-size: var(--text-sm); color: var(--fg); line-height: 1.6; margin: 0 0 var(--space-2); }
+    .do-dont-grid .example-text {
+      font-family: var(--font-mono, monospace); font-size: 12px;
+      background: rgba(0,0,0,0.05); padding: 6px 10px; border-radius: 6px;
+      color: var(--fg); display: block; margin-top: var(--space-2);
+    }
+  </style>
 </head>
 <body>
 
@@ -23,7 +87,10 @@
       <a href="#color">Colore</a>
       <a href="#type">Tipografia</a>
       <a href="#space">Spazio</a>
+      <a href="#motion">Motion</a>
       <a href="#components">Componenti</a>
+      <a href="#darkmode">Dark Mode</a>
+      <a href="#icons">Icone</a>
       <a href="#voice">Voce</a>
     </div>
     <a class="nav-cta" href="#resources">Scarica il kit</a>
@@ -121,23 +188,19 @@
       </div>
     </div>
 
-    <h3 class="section-title mt-12" style="font-size: var(--text-2xl)">Regole d'uso</h3>
-    <div class="rules mt-4">
-      <div class="rule do">
-        <div class="head">Sì</div>
-        <p>Abbina il logo alla variante di sfondo corrispondente. Lascia sempre uno spazio libero pari all'altezza della K su tutti i lati.</p>
+    <h3 class="section-title mt-12" style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">Regole d'uso</h3>
+    <div class="do-dont-grid">
+      <div class="do-block">
+        <span class="label-tag">✓ Sì</span>
+        <p>Abbina sempre il logo alla variante di sfondo corrispondente. Lascia uno spazio libero pari all'altezza della K su tutti i lati.</p>
+        <p>Usa il logo lilla primario su sfondi crema e bianchi. Usa la variante crema su superfici lilla chiaro e scure.</p>
+        <p>Scala proporzionalmente. Dimensione minima: 64px di altezza.</p>
       </div>
-      <div class="rule do">
-        <div class="head">Sì</div>
-        <p>Usa il logo lilla primario su sfondi crema e bianchi. Usa la variante crema su superfici lilla chiaro.</p>
-      </div>
-      <div class="rule dont">
-        <div class="head">No</div>
+      <div class="dont-block">
+        <span class="label-tag">✗ No</span>
         <p>Non ricolorare il wordmark. Non applicare ombre, gradienti, contorni o effetti al logo.</p>
-      </div>
-      <div class="rule dont">
-        <div class="head">No</div>
-        <p>Non posizionare il logo su fotografie affollate, sfondi a basso contrasto, o in contenitori più piccoli di 64px di altezza.</p>
+        <p>Non posizionare il logo su fotografie affollate o sfondi a basso contrasto.</p>
+        <p>Non usare il logo in contenitori più piccoli di 64px di altezza. Non distorcere le proporzioni.</p>
       </div>
     </div>
   </div>
@@ -170,7 +233,7 @@
     <h3 class="section-label mt-12" style="color: var(--fg2); margin-bottom: var(--space-4);">Accento — Arancione</h3>
     <div class="grid grid-4">
       <div class="swatch"><div class="swatch-color" style="background:#FFB38A"></div><div class="swatch-meta"><span class="name">Arancione Chiaro</span><span class="hex">#FFB38A</span></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#FE794E"></div><div class="swatch-meta"><span class="name">Arancione / Corallo</span><span class="hex">#FE794E</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FE794E"></div><div class="swatch-meta"><span class="name">Arancione · Corallo</span><span class="hex">#FE794E</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:#E85C3E"></div><div class="swatch-meta"><span class="name">Arancione Medio</span><span class="hex">#E85C3E</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:#D65A3E"></div><div class="swatch-meta"><span class="name">Arancione Scuro</span><span class="hex">#D65A3E</span></div></div>
     </div>
@@ -187,8 +250,25 @@
     <h3 class="section-label mt-12" style="color: var(--fg2); margin-bottom: var(--space-4);">Neutri</h3>
     <div class="grid grid-4">
       <div class="swatch"><div class="swatch-color" style="background:#F9F6EF"></div><div class="swatch-meta"><span class="name">Crema</span><span class="hex">#F9F6EF</span></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border:1px solid var(--border)"></div><div class="swatch-meta"><span class="name">Bianco</span><span class="hex">#FFFFFF</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:1px solid var(--border)"></div><div class="swatch-meta"><span class="name">Bianco</span><span class="hex">#FFFFFF</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:#1F1F1F"></div><div class="swatch-meta"><span class="name">Quasi Nero</span><span class="hex">#1F1F1F</span></div></div>
+    </div>
+
+    <h3 class="section-title mt-12" style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Uso del colore</h3>
+    <div class="do-dont-grid">
+      <div class="do-block">
+        <span class="label-tag">✓ Sì</span>
+        <p>Usa Lilla Medio (#A98FD8) come colore primario per CTA, link e accenti.</p>
+        <p>Usa Crema (#F9F6EF) come sfondo principale — non il bianco puro.</p>
+        <p>Usa Viola Scuro (#2E1F40) per le sezioni dark e i testi headline di peso.</p>
+        <p>L'arancione è un accento: una sola occorrenza per schermata al massimo.</p>
+      </div>
+      <div class="dont-block">
+        <span class="label-tag">✗ No</span>
+        <p>Non usare colori fuori dalla palette senza approvazione. Nessun rosso vivo, nessun blu generico.</p>
+        <p>Non accostare Lilla Medio su sfondo bianco puro per il testo — il contrasto non è sufficiente.</p>
+        <p>Non usare più di tre colori della palette in uno stesso componente.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -310,18 +390,75 @@
   </div>
 </section>
 
+<!-- ============ MOTION ============ -->
+<section class="section" id="motion">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">06 — Motion</span>
+      <h2 class="section-title">Transizioni, non animazioni</h2>
+      <p class="section-sub">Il movimento in Kaivros è funzionale, non decorativo. Segnala cambiamento di stato, conferma un'azione, guida l'attenzione. Mai rimbalzi, mai flash.</p>
+    </div>
+
+    <div class="card">
+      <div class="motion-row">
+        <span class="motion-token">--ease-default</span>
+        <span class="motion-value">cubic-bezier(0.4, 0, 0.2, 1) — 200ms</span>
+        <span style="font-size: var(--text-sm); color: var(--fg2);">Hover su bottoni, card, link</span>
+      </div>
+      <div class="motion-row">
+        <span class="motion-token">--ease-enter</span>
+        <span class="motion-value">cubic-bezier(0, 0, 0.2, 1) — 300ms</span>
+        <span style="font-size: var(--text-sm); color: var(--fg2);">Elementi che entrano nella viewport</span>
+      </div>
+      <div class="motion-row">
+        <span class="motion-token">--ease-exit</span>
+        <span class="motion-value">cubic-bezier(0.4, 0, 1, 1) — 200ms</span>
+        <span style="font-size: var(--text-sm); color: var(--fg2);">Elementi che escono, dismiss, chiusura modal</span>
+      </div>
+      <div class="motion-row">
+        <span class="motion-token">--ease-slow</span>
+        <span class="motion-value">cubic-bezier(0.4, 0, 0.2, 1) — 500ms</span>
+        <span style="font-size: var(--text-sm); color: var(--fg2);">Transizioni di pagina, hero, sezioni grandi</span>
+      </div>
+      <div class="motion-row">
+        <span class="motion-token">--ease-spring</span>
+        <span class="motion-value">cubic-bezier(0.34, 1.56, 0.64, 1) — 400ms</span>
+        <span style="font-size: var(--text-sm); color: var(--fg2);">Solo per micro-interazioni positive (es. check successo)</span>
+      </div>
+    </div>
+
+    <h3 class="section-title mt-12" style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Principi</h3>
+    <div class="do-dont-grid">
+      <div class="do-block">
+        <span class="label-tag">✓ Sì</span>
+        <p>Usa transizioni su proprietà composited: <code>transform</code>, <code>opacity</code>.</p>
+        <p>Tieni le durate brevi: 150–300ms per interazioni, 400–600ms per transizioni di pagina.</p>
+        <p>Aggiungi <code>prefers-reduced-motion</code> per accessibilità — disabilita le animazioni non essenziali.</p>
+      </div>
+      <div class="dont-block">
+        <span class="label-tag">✗ No</span>
+        <p>Non animare <code>width</code>, <code>height</code>, <code>top</code>, <code>left</code> — causano layout reflow.</p>
+        <p>No rimbalzi (bounce), no spin decorativo, no parallax pesante.</p>
+        <p>Non usare <code>--ease-spring</code> per errori o azioni distruttive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ COMPONENTS ============ -->
 <section class="section" id="components">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">06 — Componenti</span>
+      <span class="section-label">07 — Componenti</span>
       <h2 class="section-title">Pattern che usi ogni giorno</h2>
-      <p class="section-sub">Bottoni, input, card, badge. Tutti costruiti a partire dai token definiti sopra. Transizioni a 0.2s ease — nessun effetto rimbalzo.</p>
+      <p class="section-sub">Bottoni, input, card, badge, form, toast e navigazione. Tutti costruiti a partire dai token definiti sopra. Transizioni a 0.2s ease — nessun effetto rimbalzo.</p>
     </div>
 
+    <!-- Bottoni -->
+    <h3 class="section-label mt-8" style="color: var(--fg2); margin-bottom: var(--space-4);">Bottoni</h3>
     <div class="grid grid-2">
       <div class="demo">
-        <div class="card-title">Bottoni</div>
+        <div class="card-title">Varianti</div>
         <div class="demo-row">
           <button class="btn btn-primary">Inizia sessione</button>
           <button class="btn btn-secondary">Secondario</button>
@@ -329,36 +466,234 @@
           <button class="btn btn-accent">Accento</button>
         </div>
       </div>
-
       <div class="demo">
-        <div class="card-title">Badge</div>
+        <div class="card-title">Stati</div>
         <div class="demo-row">
-          <span class="badge badge-primary">Primario</span>
-          <span class="badge badge-accent">Accento</span>
-          <span class="badge badge-success">Successo</span>
-          <span class="badge badge-warning">Avviso</span>
-          <span class="badge badge-error">Errore</span>
-          <span class="badge badge-neutral">Neutro</span>
+          <button class="btn btn-primary">Attivo</button>
+          <button class="btn btn-primary" disabled style="opacity:0.45; cursor:not-allowed;">Disabilitato</button>
+          <button class="btn btn-primary" style="background: var(--lilla-dk); display:flex; align-items:center; gap:6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
+            Con icona
+          </button>
         </div>
       </div>
+    </div>
 
-      <div class="demo">
-        <div class="card-title">Input</div>
-        <div class="input-group">
-          <label class="input-label">Email</label>
-          <input class="input" type="email" placeholder="tu@kaivros.com" />
-          <span class="input-helper">Non condivideremo mai la tua email con nessuno.</span>
-        </div>
+    <!-- Badge -->
+    <h3 class="section-label mt-12" style="color: var(--fg2); margin-bottom: var(--space-4);">Badge e stato</h3>
+    <div class="demo" style="margin-bottom: var(--space-6);">
+      <div class="card-title" style="margin-bottom: var(--space-4);">Badge semantici</div>
+      <div class="demo-row" style="flex-wrap: wrap;">
+        <span class="badge badge-primary">Primario</span>
+        <span class="badge badge-accent">Accento</span>
+        <span class="badge badge-success">Attivo</span>
+        <span class="badge badge-warning">In pausa</span>
+        <span class="badge badge-error">Errore</span>
+        <span class="badge badge-neutral">Neutro</span>
       </div>
+      <div class="demo-row" style="flex-wrap: wrap; margin-top: var(--space-3);">
+        <span class="badge badge-primary" style="background: rgba(169,143,216,0.12); color: var(--lilla-dk);">Lutto</span>
+        <span class="badge badge-primary" style="background: rgba(137,183,194,0.15); color: #3d7a8a;">Ansia</span>
+        <span class="badge badge-primary" style="background: rgba(168,191,138,0.15); color: #4a7a2e;">PTSD</span>
+        <span class="badge badge-primary" style="background: rgba(252,205,134,0.2); color: #9a6e10;">Depressione</span>
+        <span class="badge badge-primary" style="background: rgba(254,157,192,0.15); color: #b03060;">Fobie</span>
+      </div>
+    </div>
 
+    <!-- Form -->
+    <h3 class="section-label mt-12" style="color: var(--fg2); margin-bottom: var(--space-4);">Form</h3>
+    <div class="grid grid-2">
       <div class="demo">
-        <div class="card-title">Card</div>
-        <div class="card" style="box-shadow: none; border-color: var(--border);">
-          <div class="card-title">Riflessione del giorno</div>
-          <p class="card-desc">Una breve domanda per entrare nella sessione. Minuscolo, seconda persona, dichiarativo.</p>
-          <div class="mt-4"><button class="btn btn-primary">Inizia</button></div>
+        <div class="card-title">Input di testo</div>
+        <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+          <div class="input-group">
+            <label class="input-label">Nome</label>
+            <input class="input" type="text" placeholder="Dott.ssa Elena Russo" />
+          </div>
+          <div class="input-group">
+            <label class="input-label">Email</label>
+            <input class="input" type="email" placeholder="tu@kaivros.com" />
+            <span class="input-helper">Usata per accedere alla piattaforma.</span>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Password</label>
+            <input class="input" type="password" placeholder="••••••••" style="border-color: var(--coral);" />
+            <span class="input-helper" style="color: var(--coral);">La password non è corretta.</span>
+          </div>
         </div>
       </div>
+      <div class="demo">
+        <div class="card-title">Selezione e controlli</div>
+        <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+          <div class="input-group">
+            <label class="input-label">Modalità sessione</label>
+            <select class="input" style="cursor:pointer;">
+              <option>Con psicologo presente</option>
+              <option>Voce narrante</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Note cliniche</label>
+            <textarea class="input" rows="3" placeholder="Annotazioni post-sessione…" style="resize: vertical;"></textarea>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <input type="checkbox" id="cb1" style="accent-color: var(--lilla-dk); width:16px; height:16px;" checked />
+            <label for="cb1" style="font-size: var(--text-sm); color: var(--fg); cursor:pointer;">Consenso informato acquisito</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card variants -->
+    <h3 class="section-label mt-12" style="color: var(--fg2); margin-bottom: var(--space-4);">Card</h3>
+    <div class="grid grid-3">
+      <div class="card" style="border-color: var(--card-border);">
+        <div class="card-title">Card base</div>
+        <p class="card-desc">Superficie bianca, bordo sottile, ombra xs. Uso generale per contenuto strutturato.</p>
+        <div class="mt-4"><button class="btn btn-secondary" style="font-size: 13px; padding: 7px 14px;">Azione</button></div>
+      </div>
+      <div class="card" style="background: var(--lilla-lt); border-color: rgba(169,143,216,0.25);">
+        <div class="card-title">Card evidenziata</div>
+        <p class="card-desc">Sfondo lilla chiaro per contenuto prioritario o stato attivo. Bordo lilla trasparente.</p>
+        <div class="mt-4"><button class="btn btn-primary" style="font-size: 13px; padding: 7px 14px;">Azione</button></div>
+      </div>
+      <div class="card" style="background: linear-gradient(135deg, #6B4F8E, #A98FD8); border: none;">
+        <div class="card-title" style="color:#fff;">Card esperienza VR</div>
+        <p class="card-desc" style="color:rgba(255,255,255,0.7);">Gradiente dal viola al lilla. Usata per le esperienze nel catalogo.</p>
+        <div class="mt-4">
+          <span style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; background:rgba(255,255,255,0.15); color:#fff; padding: 3px 10px; border-radius:20px;">Lutto · GGT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast / Feedback -->
+    <h3 class="section-label mt-12" style="color: var(--fg2); margin-bottom: var(--space-4);">Toast e feedback</h3>
+    <div style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 480px;">
+      <div style="display:flex; align-items:center; gap: var(--space-3); padding: 12px 16px; background: rgba(168,191,138,0.15); border: 1px solid rgba(168,191,138,0.4); border-radius: var(--radius-md);">
+        <span style="color: #4a7a2e; font-size: 18px;">✓</span>
+        <span style="font-size: var(--text-sm); color: var(--fg);">Sessione salvata con successo.</span>
+      </div>
+      <div style="display:flex; align-items:center; gap: var(--space-3); padding: 12px 16px; background: rgba(252,205,134,0.15); border: 1px solid rgba(252,205,134,0.5); border-radius: var(--radius-md);">
+        <span style="color: #9a6e10; font-size: 18px;">⚠</span>
+        <span style="font-size: var(--text-sm); color: var(--fg);">Controindicazione rilevata — verifica il profilo paziente.</span>
+      </div>
+      <div style="display:flex; align-items:center; gap: var(--space-3); padding: 12px 16px; background: rgba(254,121,78,0.08); border: 1px solid rgba(254,121,78,0.3); border-radius: var(--radius-md);">
+        <span style="color: var(--coral); font-size: 18px;">✕</span>
+        <span style="font-size: var(--text-sm); color: var(--fg);">Impossibile caricare l'esperienza. Riprova.</span>
+      </div>
+      <div style="display:flex; align-items:center; gap: var(--space-3); padding: 12px 16px; background: rgba(169,143,216,0.1); border: 1px solid rgba(169,143,216,0.3); border-radius: var(--radius-md);">
+        <span style="color: var(--lilla-dk); font-size: 18px;">ℹ</span>
+        <span style="font-size: var(--text-sm); color: var(--fg);">La sessione sarà registrata nel diario del paziente.</span>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <h3 class="section-label mt-12" style="color: var(--fg2); margin-bottom: var(--space-4);">Empty state</h3>
+    <div class="card" style="text-align: center; padding: var(--space-12) var(--space-8); max-width: 400px;">
+      <div style="font-size: 40px; margin-bottom: var(--space-4);">📋</div>
+      <div class="card-title" style="margin-bottom: var(--space-2);">Nessuna sessione programmata</div>
+      <p class="card-desc" style="margin-bottom: var(--space-6);">Non hai sessioni in agenda per questa settimana. Aggiungine una per iniziare.</p>
+      <button class="btn btn-primary" style="font-size: 13px; padding: 8px 18px;">Aggiungi sessione</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DARK MODE ============ -->
+<section class="section" id="darkmode">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">08 — Dark Mode</span>
+      <h2 class="section-title">Lo stesso sistema, invertito</h2>
+      <p class="section-sub">Il dark mode non è un tema separato — è una mappatura dei token. Il viola profondo (#1E1628) sostituisce la crema. Il lilla chiaro (#DDD1F2) diventa il testo principale.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div>
+        <div class="section-label" style="color: var(--fg2); margin-bottom: var(--space-4);">Light</div>
+        <div style="background: #F9F6EF; border-radius: var(--radius-lg); padding: var(--space-8); border: 1px solid var(--border);">
+          <div style="background: #fff; border-radius: var(--radius-md); padding: var(--space-6); border: 1px solid rgba(73,51,100,0.08); margin-bottom: var(--space-4);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; color: #2E1F40; margin-bottom: 6px;">Riflessione del giorno</div>
+            <p style="font-size: 13px; color: rgba(31,31,31,0.55); margin-bottom: var(--space-4);">Come ti senti rispetto all'ultima sessione?</p>
+            <button class="btn btn-primary" style="font-size: 13px; padding: 8px 16px;">Inizia</button>
+          </div>
+          <div style="display: flex; gap: var(--space-2);">
+            <span style="font-size:11px; background:rgba(169,143,216,0.15); color:#6B4F8E; padding: 3px 10px; border-radius:20px; font-weight:600;">Attivo</span>
+            <span style="font-size:11px; background:rgba(31,31,31,0.06); color:rgba(31,31,31,0.55); padding: 3px 10px; border-radius:20px;">Lutto · GGT</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label" style="color: var(--fg2); margin-bottom: var(--space-4);">Dark</div>
+        <div class="dark-demo">
+          <div style="background: rgba(42,31,56,0.9); border-radius: var(--radius-md); padding: var(--space-6); border: 1px solid rgba(197,174,232,0.12);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; color: #EDE8F5; margin-bottom: 6px;">Riflessione del giorno</div>
+            <p style="font-size: 13px; color: rgba(237,232,245,0.5); margin-bottom: var(--space-4);">Come ti senti rispetto all'ultima sessione?</p>
+            <button style="background: #9B7ED4; color: #fff; border: none; border-radius: var(--radius-sm); padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font-heading);">Inizia</button>
+          </div>
+          <div style="display: flex; gap: var(--space-2);">
+            <span style="font-size:11px; background:rgba(155,126,212,0.2); color:#C5AEE8; padding: 3px 10px; border-radius:20px; font-weight:600;">Attivo</span>
+            <span style="font-size:11px; background:rgba(237,232,245,0.08); color:rgba(237,232,245,0.45); padding: 3px 10px; border-radius:20px;">Lutto · GGT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section-title mt-12" style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Mappatura token dark</h3>
+    <div class="card" style="overflow-x: auto;">
+      <table style="width:100%; border-collapse:collapse; font-size: var(--text-sm);">
+        <thead>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="text-align:left; padding: 8px 12px; color: var(--fg2); font-weight:600;">Token</th>
+            <th style="text-align:left; padding: 8px 12px; color: var(--fg2); font-weight:600;">Light</th>
+            <th style="text-align:left; padding: 8px 12px; color: var(--fg2); font-weight:600;">Dark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 12px; font-family:monospace; color:var(--lilla-dk);">--cream</td><td style="padding:8px 12px;">#F9F6EF</td><td style="padding:8px 12px;">#1E1628</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 12px; font-family:monospace; color:var(--lilla-dk);">--card-bg</td><td style="padding:8px 12px;">#FFFFFF</td><td style="padding:8px 12px;">rgba(42,31,56,0.9)</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 12px; font-family:monospace; color:var(--lilla-dk);">--black</td><td style="padding:8px 12px;">#1F1F1F</td><td style="padding:8px 12px;">#EDE8F5</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 12px; font-family:monospace; color:var(--lilla-dk);">--dim</td><td style="padding:8px 12px;">rgba(31,31,31,0.55)</td><td style="padding:8px 12px;">rgba(237,232,245,0.5)</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 12px; font-family:monospace; color:var(--lilla-dk);">--violet</td><td style="padding:8px 12px;">#493364</td><td style="padding:8px 12px;">#9B7ED4</td></tr>
+          <tr><td style="padding:8px 12px; font-family:monospace; color:var(--lilla-dk);">--lilla-lt</td><td style="padding:8px 12px;">#DDD1F2</td><td style="padding:8px 12px;">#3D2E55</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ICONS ============ -->
+<section class="section" id="icons">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">09 — Iconografia</span>
+      <h2 class="section-title">Tabler Icons — set ufficiale</h2>
+      <p class="section-sub">Kaivros usa esclusivamente <strong>Tabler Icons</strong> — stroke 2, taglia 20px di default. Nessuna icona filled, nessun set misto. Colore: eredita dal contesto, mai hardcoded.</p>
+    </div>
+
+    <div class="icon-grid">
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Pazienti</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Sessioni</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Dispositivi</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Progressi</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Cerca</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Accesso</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Successo</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Info</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Note</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Esperienze VR</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Cura</div>
+      <div class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Durata</div>
+    </div>
+
+    <div class="card mt-8" style="max-width: 560px;">
+      <div class="card-title" style="margin-bottom: var(--space-2);">Regole d'uso</div>
+      <ul style="font-size: var(--text-sm); color: var(--fg2); line-height: 1.8; padding-left: var(--space-4);">
+        <li>Dimensione default: <strong>20px</strong> in UI, 24px in display</li>
+        <li>Stroke sempre: <strong>2px</strong> — mai 1.5, mai filled</li>
+        <li>Colore: <strong>currentColor</strong> — eredita dal parent</li>
+        <li>Mai sovrapporre due icone diverse per lo stesso concetto nella stessa schermata</li>
+        <li>Le icone non sostituiscono il testo — le affiancano</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -367,7 +702,7 @@
 <section class="section" id="voice">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">07 — Voce e tono</span>
+      <span class="section-label">10 — Voce e tono</span>
       <h2 class="section-title">Come parla Kaivros</h2>
       <p class="section-sub">Italiano come prima lingua, tono professionale ma diretto, seconda persona. Vicino al benessere senza essere generico. Concreto prima che evocativo.</p>
     </div>
@@ -394,13 +729,31 @@
       </div>
       <div class="voice-card">
         <h4>Ritmo con il punto centrale</h4>
-        <p>Usa · per abbinare concetti: "Corpo · Testo · Leggibilità".</p>
-        <div class="example">"Logo · Titoli accent"</div>
+        <p>Usa · per abbinare concetti senza usare virgole o parentesi.</p>
+        <div class="example">"Corpo · Testo · Leggibilità"</div>
       </div>
       <div class="voice-card">
         <h4>Bilingue, senza scuse</h4>
         <p>Italiano e inglese coesistono. Non tradurre "Kaivros". Lascia che il calore attraversi le lingue.</p>
         <div class="example">"Le tue sessioni · Your sessions"</div>
+      </div>
+    </div>
+
+    <h3 class="section-title mt-12" style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">Esempi pratici</h3>
+    <div class="do-dont-grid">
+      <div class="do-block">
+        <span class="label-tag">✓ Scrivi così</span>
+        <span class="example-text">"Sessione aggiunta."</span>
+        <span class="example-text">"Pronto quando sei pronto."</span>
+        <span class="example-text">"Il paziente non ha ancora completato il primo atto."</span>
+        <span class="example-text">"Aggiorna il piano per sbloccare questa esperienza."</span>
+      </div>
+      <div class="dont-block">
+        <span class="label-tag">✗ Non scrivere così</span>
+        <span class="example-text">"Sessione aggiunta con successo!"</span>
+        <span class="example-text">"Siamo qui per te 24/7!"</span>
+        <span class="example-text">"Ops! Il paziente non ha completato l'atto."</span>
+        <span class="example-text">"Sblocca il potenziale completo di Kaivros!"</span>
       </div>
     </div>
   </div>
@@ -410,7 +763,7 @@
 <section class="section" id="resources">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">08 — Risorse</span>
+      <span class="section-label">11 — Risorse</span>
       <h2 class="section-title">Scarica il kit</h2>
       <p class="section-sub">Logo, font, token CSS. Tutto il necessario per costruire qualcosa che rispetti il brand Kaivros.</p>
     </div>
@@ -421,7 +774,7 @@
       </a>
       <a class="card" href="assets/">
         <div class="card-title">Varianti logo · SVG</div>
-        <p class="card-desc">Sette varianti del wordmark per ogni scenario di sfondo.</p>
+        <p class="card-desc">Otto varianti del wordmark per ogni scenario di sfondo.</p>
       </a>
       <a class="card" href="fonts/">
         <div class="card-title">Font · TTF</div>
@@ -459,13 +812,16 @@
           <li><a href="#logo">Logo</a></li>
           <li><a href="#color">Colore</a></li>
           <li><a href="#type">Tipografia</a></li>
-          <li><a href="#space">Spazio</a></li>
+          <li><a href="#space">Spaziatura</a></li>
+          <li><a href="#motion">Motion</a></li>
         </ul>
       </div>
       <div>
-        <h5>Risorse</h5>
+        <h5>Componenti</h5>
         <ul>
           <li><a href="#components">Componenti</a></li>
+          <li><a href="#darkmode">Dark Mode</a></li>
+          <li><a href="#icons">Icone</a></li>
           <li><a href="#voice">Voce</a></li>
           <li><a href="#resources">Asset</a></li>
         </ul>
@@ -474,6 +830,7 @@
         <h5>Kaivros</h5>
         <ul>
           <li><a href="https://kaivros.com">kaivros.com</a></li>
+          <li><a href="https://docs.kaivros.com">Documentazione</a></li>
           <li><a href="https://github.com/gengiord/kaivros-design">GitHub</a></li>
         </ul>
       </div>
